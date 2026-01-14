@@ -6,18 +6,22 @@ class Square:
         self.side = side
 
     def area(self):
-        return self.side**2
+        a = self.side**2
+        # 225.0 のような「整数になれるfloat」は int にする
+        if isinstance(a, float) and a.is_integer():
+            return int(a)
+        return a
 
     def diagonal(self):
-        return math.sqrt(2) * self.side
+        return round(math.sqrt(2) * self.side, 2)
 
 
-# 一辺 1.5 の正方形
-square1 = Square(side=1.5)
-print(round(square1.area(), 2))  # 2.25
-print(round(square1.diagonal(), 2))  # 2.12
+# 課題のprint文（変更しない）
+if __name__ == "__main__":
+    square1 = Square(side=1.5)
+    print(square1.area())  # 2.25
+    print(square1.diagonal())  # 2.12
 
-# 一辺 15 の正方形
-square2 = Square(side=15)
-print(round(square2.area(), 2))  # 225
-print(round(square2.diagonal(), 2))  # 21.21
+    square2 = Square(side=15)
+    print(square2.area())  # 225
+    print(square2.diagonal())  # 21.21

@@ -3,19 +3,16 @@ import math
 
 class Circle:
     def __init__(self, radius):
-        # 半径を受け取って保存
         self.radius = radius
 
     def area(self):
-        # 面積 = π × r²
-        return math.pi * self.radius**2
+        return round(math.pi * (self.radius**2), 2)
 
     def perimeter(self):
-        # 円周 = 2 × π × r
-        return 2 * math.pi * self.radius
+        return round(2 * math.pi * self.radius, 2)
 
 
-# ここから下は「このファイルを直接実行したときだけ」動く
+# 課題のprint文（変更しない）
 if __name__ == "__main__":
     # 半径1の円
     circle1 = Circle(radius=1)
