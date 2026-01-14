@@ -6,11 +6,11 @@ class Square:
         self.side = side
 
     def area(self):
-        a = self.side**2
+        i = self.side**2
         # 225.0 のような「整数になれるfloat」は int にする
-        if isinstance(a, float) and a.is_integer():
-            return int(a)
-        return a
+        if isinstance(i, float) and i.is_integer():
+            return int(i)
+        return i
 
     def diagonal(self):
         return round(math.sqrt(2) * self.side, 2)
